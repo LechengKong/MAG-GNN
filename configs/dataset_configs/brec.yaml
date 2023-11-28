@@ -1,0 +1,31 @@
+train_data_set : "brec"
+num_layers : 5
+JK : "last"
+exp_name : "brec"
+fold : 5
+metric : "acc"
+train_mode_test : False
+num_epochs : 1500
+num_rl_epochs : 1500
+
+train_sample_size : 5000
+eval_sample_size : 1000
+lr : 0.001
+
+# data related
+data_trans : ["graph_data_k_fold_split", "add_replay_data"]
+prepare_model : "prepare_no_feat_graph"
+agent_eval : "cls"
+
+# rl related
+q_steps: 2
+memory_capacity : 300000
+sync_rate : 120
+eps_last_frame : 40000
+exp_steps : 2
+
+task : "node"
+post_method : "direct"
+
+brec_type : "basic"
+brec_ind : 0

@@ -1,0 +1,34 @@
+train_data_set : "qm"
+num_layers : 5
+JK : "sum"
+exp_name : "qm"
+fold : 10
+metric : "mae_std"
+num_epochs : 1000
+num_rl_epochs : 1000
+batch_size : 1024
+eval_batch_size : 1024
+
+# data related
+data_trans : ["graph_data_k_fold_split", "add_replay_data"]
+prepare_model : "prepare_QM"
+agent_eval : "reg"
+
+# rl related
+q_steps: 2
+memory_capacity : 3000000
+sync_rate : 3000
+eps_last_frame : 60000
+eps_first_frame: 30000
+exp_steps : 2
+
+task : "graph"
+post_method : "label"
+
+loss : "mae"
+loss_func : "regression_func"
+eval_func : "regression_func"
+eval_mode : "min"
+data_label : "mu"
+
+data_norm : True

@@ -1,0 +1,30 @@
+train_data_set : "zinc"
+mol_emb_dim : 100
+num_layers : 6
+JK : "sum"
+batch_size : 256
+eval_batch_size : 256
+num_epochs : 4000
+num_rl_epochs : 4000
+metric : "mae"
+exp_name : "zinc"
+
+# rl related
+q_steps: 2
+memory_capacity : 3000000
+sync_rate : 5000
+eps_last_frame : 100000
+eps_first_frame: 50000
+exp_steps : 2
+
+# data related
+data_trans : ["graph_splitted_data", "add_replay_data"]
+prepare_model : "prepare_ZINC"
+agent_eval : "reg"
+
+loss : "mae"
+loss_func : "regression_func"
+eval_func : "regression_func"
+eval_mode : "min"
+task : "graph"
+post_method : "label"

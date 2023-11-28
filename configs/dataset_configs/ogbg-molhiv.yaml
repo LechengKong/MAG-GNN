@@ -1,0 +1,29 @@
+train_data_set : "ogbg-molhiv"
+mol_emb_dim : 100
+JK : "sum"
+num_layers : 6
+batch_size : 128
+eval_batch_size : 128
+num_epochs : 300
+num_rl_epochs : 2000
+metric : "auc"
+exp_name : "molhiv"
+
+# rl related
+q_steps: 2
+memory_capacity : 3000000
+sync_rate : 3000
+eps_last_frame : 50000
+exp_steps : 2
+
+# data related
+data_trans : ["graph_splitted_data", "add_replay_data"]
+prepare_model : "prepare_OGB"
+agent_eval : "cls"
+
+loss : "ce"
+loss_func : "classification_func"
+eval_func : "last_col_auc"
+eval_mode : "max"
+task : "graph"
+post_method : "label"

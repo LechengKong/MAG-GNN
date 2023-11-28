@@ -1,0 +1,3 @@
+training_mode : "ord"
+episode : 1
+last_train_pred : False

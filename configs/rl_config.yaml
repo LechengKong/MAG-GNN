@@ -1,0 +1,34 @@
+# Training related
+q_steps : 8
+memory_capacity : 3000
+episode : 50
+rl_pred_rep : 1
+num_rl_epochs : 200
+replay_size : 1
+use_hist : False
+sync_rate : 1000
+eps_first_frame: 20000
+eps_last_frame : 50000
+eps_start : 1.0
+eps_end : 0.02
+gamma : 0.9
+training_mode : "full"
+exp_steps : 8
+rl_l2 : 0
+num_nm : 1
+replay_type : "sm"
+combine_prev : True
+ens : False
+train_eps : True
+
+# Model related
+mover_mode : "mlp"
+agent_type : "multism"
+post_method : "direct"
+state_emb : "rl"
+eps_reset : 0
+
+last_train_pred : True
+only_train_pred : False
+train_pred_gnn : True
+node_only_agent : True

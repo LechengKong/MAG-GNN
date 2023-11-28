@@ -1,0 +1,29 @@
+train_data_set : "syn_count"
+mol_emb_dim : 100
+JK : "sum"
+num_layers : 6
+batch_size : 128
+eval_batch_size : 128
+num_epochs : 2000
+num_rl_epochs : 2000
+metric : "mae"
+exp_name : "syn_count"
+
+# rl related
+q_steps: 4
+memory_capacity : 3000000
+sync_rate : 1000
+eps_last_frame : 14000
+eps_first_frame: 7000
+exp_steps : 4
+
+# data related
+data_trans : ["graph_splitted_data", "add_replay_data"]
+prepare_model : "prepare_no_feat_node"
+agent_eval : "reg_node"
+
+loss : "mae"
+loss_func : "regression_func_node"
+eval_func : "regression_func_node"
+eval_mode : "min"
+data_label : 0

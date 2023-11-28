@@ -1,0 +1,25 @@
+data_path: "./data"
+emb_dim: 100
+dropout: 0
+lr: 0.001
+l2: 0
+num_workers: 4
+save_every: 1
+offline_log: True
+csv_log: False
+exp_name: "GNN"
+num_piece: 2
+test_rep: 10
+pred_rep: 1
+num_epochs: 200
+batch_size: 32
+eval_batch_size: 32
+data_arg: [ ]
+summarizer: None
+train_mode_test: False
+ens_type: "pos"
+training_mode: "rnm"
+seed: 1
+load_best: True
+train_sample_size: -1
+eval_sample_size: -1
